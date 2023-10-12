@@ -70,7 +70,7 @@ FILE_SIZE=$(stat -c%s "temp.gif")
 # Optimize the GIF until it's under the desired size
 echo "Optimizing GIF..."
 while [ $FILE_SIZE -gt $MAX_SIZE_BYTES ]; do
-    gifsicle -O3 --colors 256 --lossy=30 temp.gif -o temp_optimized.gif
+    gifsicle -O3 --colors 256 --lossy=80 temp.gif -o temp_optimized.gif
     mv temp_optimized.gif temp.gif
     FILE_SIZE=$(stat -c%s "temp.gif")
 done
